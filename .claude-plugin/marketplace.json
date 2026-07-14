@@ -8,7 +8,7 @@
     {
       "name": "ai-post-detector",
       "source": "./plugins/ai-post-detector",
-      "description": "Catch AI-writing tells and reach-killing mistakes in any LinkedIn/X post before you publish. Exact quotes, exact fixes. Free, no API key."
+      "description": "AI detector and humanizer for LinkedIn/X posts: detect AI-written text and reach-killing mistakes before you publish, with the exact quote and fix for each. Free SocialNexis API, no key required."
     },
     {
       "name": "linkedin-post-ideas",

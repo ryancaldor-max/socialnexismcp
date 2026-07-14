@@ -1,12 +1,21 @@
 {
   "name": "ai-post-detector",
-  "version": "1.1.0",
-  "description": "Catch AI-writing tells and reach-killing mistakes in any LinkedIn/X post before you publish. Exact quotes, exact fixes. Free SocialNexis API, no key required.",
+  "version": "1.1.1",
+  "description": "AI detector and humanizer for LinkedIn/X posts: detect AI-written text and reach-killing mistakes before you publish, with the exact quote and fix for each. Free SocialNexis API, no key required.",
   "author": {
     "name": "SocialNexis",
     "url": "https://socialnexis.com"
   },
   "homepage": "https://socialnexis.com/mcp",
   "license": "MIT",
-  "keywords": ["ai-detector", "humanizer", "linkedin", "twitter", "post-analyzer", "ai-writing", "social-media", "copywriting"]
+  "keywords": [
+    "ai-detector",
+    "humanizer",
+    "linkedin",
+    "twitter",
+    "post-analyzer",
+    "ai-writing",
+    "social-media",
+    "copywriting"
+  ]
 }

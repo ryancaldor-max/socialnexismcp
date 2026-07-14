@@ -1,6 +1,6 @@
 ---
 name: ai-post-detector
-description: Catch AI-writing tells and reach-killing mistakes in any LinkedIn/X post before you publish. Em dashes, buzzwords, markdown artifacts, engagement bait, weak hooks — flagged with the exact quote and the exact fix. Free, no API key. Use when the user asks to check, score, improve, or humanize a social post draft, or asks "does this sound AI-written?"
+description: AI detector and humanizer for LinkedIn and X posts. Detect AI-written text (em dashes, buzzwords, markdown artifacts) and reach-killing mistakes (engagement bait, weak hooks) before you publish, with the exact quote and exact fix for each. Free, no API key. Use when the user asks to check, score, humanize, or de-AI a social post draft, detect AI writing, or asks "does this sound AI-written?"
 metadata:
   openclaw:
     emoji: "🔍"
