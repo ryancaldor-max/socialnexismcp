@@ -1,0 +1,39 @@
+{
+  "name": "socialnexis-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for SocialNexis free post tools: AI detector and humanizer for LinkedIn/X posts, post quality analyzer, and structured post idea generator. No API key required. From socialnexis.com/mcp.",
+  "bin": {
+    "socialnexis-mcp": "index.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "modelcontextprotocol",
+    "ai-detector",
+    "humanizer",
+    "linkedin",
+    "twitter",
+    "post-analyzer",
+    "post-ideas",
+    "social-media",
+    "claude"
+  ],
+  "author": "SocialNexis (https://socialnexis.com)",
+  "homepage": "https://socialnexis.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryancaldor-max/socialnexismcp.git"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
