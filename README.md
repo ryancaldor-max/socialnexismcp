@@ -46,7 +46,7 @@ curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/ideate \
 
 Full request/response docs: [ai-post-detector](skills/ai-post-detector/SKILL.md) ·
 [linkedin-post-ideas](skills/linkedin-post-ideas/SKILL.md).
-Rate limits per IP: 60/h detector, 20/h analysis + ideas.
+Free daily limits per user: 40 detector scans, 10 analyses, 2 idea batches.
 
 ## The full product
 
