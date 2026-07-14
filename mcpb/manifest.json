@@ -1,0 +1,58 @@
+{
+  "manifest_version": "0.2",
+  "name": "socialnexis-post-tools",
+  "display_name": "SocialNexis Post Tools",
+  "version": "1.0.0",
+  "description": "AI detector and humanizer for LinkedIn/X posts, post quality analyzer, and structured post idea generator. Free, no API key.",
+  "long_description": "Three free tools for social post quality, no API key required.\n\n1. check_post_tells: deterministic scan for AI-writing tells (em dashes, buzzwords, markdown artifacts, unattributed authority, self-labeled takes) and reach best practices (engagement bait, weak openers, hashtag stuffing). Every finding includes the verbatim quote, its character range, and a prescriptive fix.\n\n2. analyze_post: adds a judged six-axis quality rubric (substance, hook, concreteness, topic clarity, question quality, self-containedness) and a match against 12 proven post structures. Free daily limit: 10 analyses.\n\n3. generate_post_ideas: turns a topic or pasted article into 3 ready-to-write post ideas (hook, thesis, outline), each on a proven post structure. Never invents facts or citations. Free daily limit: 2 calls (6 ideas).\n\nFrom socialnexis.com/mcp.",
+  "author": {
+    "name": "SocialNexis",
+    "url": "https://socialnexis.com"
+  },
+  "homepage": "https://socialnexis.com/mcp",
+  "documentation": "https://socialnexis.com/mcp/docs",
+  "support": "https://socialnexis.com/mcp/docs",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"]
+    }
+  },
+  "tools": [
+    {
+      "name": "check_post_tells",
+      "description": "Detect AI-writing tells and reach mistakes in a LinkedIn/X post draft, with the exact quote and fix for each. Instant and free."
+    },
+    {
+      "name": "analyze_post",
+      "description": "Full post quality analysis: tells scan plus a six-axis rubric and a match against 12 proven post structures."
+    },
+    {
+      "name": "generate_post_ideas",
+      "description": "3 ready-to-write LinkedIn/X post ideas (hook, thesis, outline) from a topic or pasted article. Never invents citations."
+    }
+  ],
+  "keywords": [
+    "linkedin",
+    "twitter",
+    "ai-detector",
+    "humanizer",
+    "post-analyzer",
+    "post-ideas",
+    "social-media",
+    "writing"
+  ],
+  "license": "MIT",
+  "privacy_policies": [
+    "https://socialnexis.com/privacy"
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18"
+    }
+  }
+}
