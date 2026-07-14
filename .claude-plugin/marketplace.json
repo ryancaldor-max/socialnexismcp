@@ -1,0 +1,14 @@
+{
+  "name": "socialnexis",
+  "owner": {
+    "name": "SocialNexis",
+    "url": "https://socialnexis.com"
+  },
+  "plugins": [
+    {
+      "name": "socialnexis-post-tools",
+      "source": "./plugins/socialnexis-post-tools",
+      "description": "Analyze LinkedIn/X post drafts for AI-writing tells and reach best practices, and generate structured post ideas. Free API, no key required."
+    }
+  ]
+}
