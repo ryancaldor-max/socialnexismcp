@@ -1,45 +1,52 @@
 # SocialNexis Agent Tools
 
-Free tools for AI agents: analyze LinkedIn/X post drafts for **AI-writing
-tells** and **reach best practices**, and generate **structured post ideas**.
-No API key required.
+Two free tools for AI agents. No API key required.
 
-Built by [SocialNexis](https://socialnexis.com) — the AI agent that runs your
+| Skill | What it does |
+|---|---|
+| **🔍 AI Post Detector** | Catch AI-writing tells (em dashes, buzzwords, markdown artifacts) and reach-killing mistakes (engagement bait, weak hooks) in any LinkedIn/X post before you publish. Every finding: exact quote, exact fix. |
+| **💡 LinkedIn Post Ideas** | Turn any topic or article into 3 ready-to-write post ideas: hook, thesis, outline, on proven viral templates. Never invents facts or citations. |
+
+Built by [SocialNexis](https://socialnexis.com), the AI agent that runs your
 LinkedIn and X presence end to end.
 
 ## Install
+
+**OpenClaw** (ClawHub):
+
+```
+clawhub install ai-post-detector
+clawhub install linkedin-post-ideas
+```
 
 **Claude Code** (plugin marketplace):
 
 ```
 /plugin marketplace add ryancaldor-max/socialnexismcp
-/plugin install socialnexis-post-tools@socialnexis
+/plugin install ai-post-detector@socialnexis
+/plugin install linkedin-post-ideas@socialnexis
 ```
 
-**OpenClaw** (ClawHub):
-
-```
-clawhub install socialnexis-post-tools
-```
-
-**Any agent / raw API** — the endpoints are public, docs in
-[skills/socialnexis-post-tools/SKILL.md](skills/socialnexis-post-tools/SKILL.md):
+**Any agent / raw API** — the endpoints are public:
 
 ```bash
+# Detect AI tells + reach mistakes
 curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/tells \
   -H 'content-type: application/json' \
   -d '{"body": "Excited to share this game-changer — thoughts?"}'
+
+# Full analysis (quality rubric + structure match)
+curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/analyze \
+  -H 'content-type: application/json' -d '{"body": "<draft>"}'
+
+# 3 structured post ideas
+curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/ideate \
+  -H 'content-type: application/json' -d '{"topic": "engineering hiring"}'
 ```
 
-## What you get
-
-| Tool | What it does | Cost |
-|---|---|---|
-| `tells` | Deterministic scan: em dashes, markdown, buzzwords, engagement bait, weak openers, 12 checks total — each finding with a quote, char range, and fix | Free, instant |
-| `analyze` | Everything above + a 6-axis quality rubric + which of 12 proven post structures your draft resembles (and the beat it misses) | Free |
-| `ideate` | 3 distinct post ideas from a topic or pasted article — each with hook, thesis, outline, and a named structure. Never invents citations | Free |
-
-Rate limits: 60/h (`tells`), 20/h (`analyze`+`ideate`) per IP.
+Full request/response docs: [ai-post-detector](skills/ai-post-detector/SKILL.md) ·
+[linkedin-post-ideas](skills/linkedin-post-ideas/SKILL.md).
+Rate limits per IP: 60/h detector, 20/h analysis + ideas.
 
 ## The full product
 
@@ -49,4 +56,4 @@ itself, and runs your LinkedIn/X engagement on autopilot with a real browser.
 
 ## License
 
-MIT — the skill files in this repo. The API they call is a hosted service.
+MIT for the skill files in this repo. The API they call is a hosted service.

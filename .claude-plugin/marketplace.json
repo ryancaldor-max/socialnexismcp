@@ -6,9 +6,14 @@
   },
   "plugins": [
     {
-      "name": "socialnexis-post-tools",
-      "source": "./plugins/socialnexis-post-tools",
-      "description": "Analyze LinkedIn/X post drafts for AI-writing tells and reach best practices, and generate structured post ideas. Free API, no key required."
+      "name": "ai-post-detector",
+      "source": "./plugins/ai-post-detector",
+      "description": "Catch AI-writing tells and reach-killing mistakes in any LinkedIn/X post before you publish. Exact quotes, exact fixes. Free, no API key."
+    },
+    {
+      "name": "linkedin-post-ideas",
+      "source": "./plugins/linkedin-post-ideas",
+      "description": "Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas: hook, thesis, outline, on proven viral templates. Free, no API key."
     }
   ]
 }
