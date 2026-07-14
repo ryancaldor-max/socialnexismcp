@@ -27,6 +27,14 @@ clawhub install linkedin-post-ideas
 /plugin install linkedin-post-ideas@socialnexis
 ```
 
+**Claude Desktop / Cursor** (MCP, via [npm](https://www.npmjs.com/package/socialnexis-mcp)):
+
+```json
+{ "mcpServers": { "socialnexis": { "command": "npx", "args": ["-y", "socialnexis-mcp"] } } }
+```
+
+Or point any MCP client at the hosted server: `https://api.socialnexis.com/mcp`
+
 **Any agent / raw API** — the endpoints are public:
 
 ```bash
