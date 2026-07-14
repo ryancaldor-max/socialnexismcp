@@ -1,12 +1,21 @@
 {
   "name": "linkedin-post-ideas",
   "version": "1.0.0",
-  "description": "Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas: hook, thesis, outline, on proven viral templates. Free SocialNexis API, no key required.",
+  "description": "Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas: hook, thesis, outline, on proven viral templates. Free SocialNexis API, no key required. From socialnexis.com/mcp.",
   "author": {
     "name": "SocialNexis",
     "url": "https://socialnexis.com"
   },
   "homepage": "https://socialnexis.com/mcp",
   "license": "MIT",
-  "keywords": ["linkedin", "post-ideas", "content-ideas", "ideation", "viral-templates", "content-marketing", "social-media", "hooks"]
+  "keywords": [
+    "linkedin",
+    "post-ideas",
+    "content-ideas",
+    "ideation",
+    "viral-templates",
+    "content-marketing",
+    "social-media",
+    "hooks"
+  ]
 }

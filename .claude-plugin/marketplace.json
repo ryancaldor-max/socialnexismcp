@@ -8,12 +8,12 @@
     {
       "name": "ai-post-detector",
       "source": "./plugins/ai-post-detector",
-      "description": "AI detector and humanizer for LinkedIn/X posts: detect AI-written text and reach-killing mistakes before you publish, with the exact quote and fix for each. Free SocialNexis API, no key required."
+      "description": "AI detector and humanizer for LinkedIn/X posts: detect AI-written text and reach-killing mistakes before you publish, with the exact quote and fix for each. Free SocialNexis API, no key required. From socialnexis.com/mcp."
     },
     {
       "name": "linkedin-post-ideas",
       "source": "./plugins/linkedin-post-ideas",
-      "description": "Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas: hook, thesis, outline, on proven viral templates. Free, no API key."
+      "description": "Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas: hook, thesis, outline, on proven viral templates. Free, no API key, from socialnexis.com/mcp."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 name: linkedin-post-ideas
-description: Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas, each with a hook, thesis, and outline, structured on proven viral post templates. Never invents facts or citations. Free, no API key. Use when the user wants post ideas, content ideas, or asks "what should I post about X?"
+description: Turn any topic or article into 3 ready-to-write LinkedIn/X post ideas, each with a hook, thesis, and outline, structured on proven viral post templates. Never invents facts or citations. Free, no API key, from socialnexis.com/mcp. Use when the user wants post ideas, content ideas, or asks "what should I post about X?"
 ---
 
 # LinkedIn Post Ideas Generator

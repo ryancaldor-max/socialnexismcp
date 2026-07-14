@@ -1,6 +1,6 @@
 ---
 name: ai-post-detector
-description: AI detector and humanizer for LinkedIn and X posts. Detect AI-written text (em dashes, buzzwords, markdown artifacts) and reach-killing mistakes (engagement bait, weak hooks) before you publish, with the exact quote and exact fix for each. Free, no API key. Use when the user asks to check, score, humanize, or de-AI a social post draft, detect AI writing, or asks "does this sound AI-written?"
+description: AI detector and humanizer for LinkedIn and X posts. Detect AI-written text (em dashes, buzzwords, markdown artifacts) and reach-killing mistakes (engagement bait, weak hooks) before you publish, with the exact quote and exact fix for each. Free, no API key, from socialnexis.com/mcp. Use when the user asks to check, score, humanize, or de-AI a social post draft, detect AI writing, or asks "does this sound AI-written?"
 ---
 
 # AI Post Detector (LinkedIn + X)
