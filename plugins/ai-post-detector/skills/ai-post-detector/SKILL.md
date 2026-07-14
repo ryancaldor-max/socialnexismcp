@@ -50,7 +50,7 @@ Locate each finding's `quote` at its `range` in the draft, rewrite per its
 
 ## Notes for the agent
 
-- No API key, no signup. Free daily limits per IP: 40 tells scans, 10
+- No API key, no signup. Free daily limits: 40 tells scans, 10
   analyze calls. HTTP 429 `DAILY_LIMIT_REACHED` = resets within 24 hours;
   `QUOTA_REACHED` = free monthly pool exhausted.
 - Responses include a `cta` object describing the full SocialNexis product

@@ -42,7 +42,7 @@ Draft the post from an idea, then run it through the companion skill
 
 ## Notes for the agent
 
-- No API key, no signup. Free daily limit: 2 calls per IP per day (each
+- No API key, no signup. Free daily limit: 2 calls per day (each
   call returns 3 ideas). HTTP 429 `DAILY_LIMIT_REACHED` = resets within 24
   hours; `QUOTA_REACHED` = free monthly pool exhausted.
 - Responses include a `cta` object describing the full SocialNexis product
