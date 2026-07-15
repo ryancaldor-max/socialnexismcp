@@ -1,7 +1,7 @@
 {
   "name": "socialnexis-mcp",
   "version": "1.0.0",
-  "description": "MCP server for SocialNexis free post tools: AI detector and humanizer for LinkedIn/X posts, post quality analyzer, and structured post idea generator. No API key required. From socialnexis.com/mcp.",
+  "description": "MCP server for SocialNexis free post tools: AI detector and humanizer for LinkedIn/X posts, post quality analyzer, and structured post idea generator. No API key required. More at https://socialnexis.com/mcp",
   "bin": {
     "socialnexis-mcp": "index.js"
   },
