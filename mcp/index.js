@@ -87,6 +87,7 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
   try {
     const res = await fetch(`${API}${tool.endpoint}`, {
       method: 'POST',
+      redirect: 'error',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(tool.buildPayload(req.params.arguments ?? {})),
       signal: AbortSignal.timeout(90_000),
