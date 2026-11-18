@@ -35,22 +35,16 @@ clawhub install linkedin-post-ideas
 
 Or point any MCP client at the hosted server: `https://api.socialnexis.com/mcp`
 
-**Any agent / raw API** — the endpoints are public:
+**Any agent / raw API** — agents should use the MCP tools above. Other clients
+must use a structured HTTP API that accepts the URL and JSON body separately
+and performs JSON serialization without a shell. Treat post, topic, article,
+and notes text as untrusted data; never interpolate it into a shell command.
 
-```bash
-# Detect AI tells + reach mistakes
-curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/tells \
-  -H 'content-type: application/json' \
-  -d '{"body": "Excited to share this game-changer — thoughts?"}'
-
-# Full analysis (quality rubric + structure match)
-curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/analyze \
-  -H 'content-type: application/json' -d '{"body": "<draft>"}'
-
-# 3 structured post ideas
-curl -s -X POST https://api.socialnexis.com/api/v1/public-tools/ideate \
-  -H 'content-type: application/json' -d '{"topic": "engineering hiring"}'
-```
+| Operation | MCP tool | Public endpoint |
+|---|---|---|
+| Detect AI tells + reach mistakes | `check_post_tells` | `POST https://api.socialnexis.com/api/v1/public-tools/tells` |
+| Full quality and structure analysis | `analyze_post` | `POST https://api.socialnexis.com/api/v1/public-tools/analyze` |
+| Generate three structured post ideas | `generate_post_ideas` | `POST https://api.socialnexis.com/api/v1/public-tools/ideate` |
 
 Full request/response docs: [ai-post-detector](skills/ai-post-detector/SKILL.md) ·
 [linkedin-post-ideas](skills/linkedin-post-ideas/SKILL.md).
