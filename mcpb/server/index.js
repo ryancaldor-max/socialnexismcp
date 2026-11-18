@@ -14,6 +14,8 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js'
 
 const API = 'https://api.socialnexis.com/api/v1/public-tools'
+const MAX_RESPONSE_BYTES = 1024 * 1024
+const MAX_RESULT_BYTES = 1024 * 1024
 
 const TOOLS = [
   {
@@ -65,9 +67,78 @@ const TOOLS = [
   },
 ]
 
+class ResponseTooLargeError extends Error {
+  constructor() {
+    super(`SocialNexis response exceeded the ${MAX_RESPONSE_BYTES}-byte limit`)
+    this.name = 'ResponseTooLargeError'
+  }
+}
+
+async function cancelBody(body) {
+  try {
+    await body?.cancel()
+  } catch {
+    // The stream may already be closed or errored; either way, stop consuming it.
+  }
+}
+
+async function readJsonResponse(res) {
+  const contentLength = res.headers.get('content-length')
+  if (/^\d+$/.test(contentLength ?? '') && Number(contentLength) > MAX_RESPONSE_BYTES) {
+    await cancelBody(res.body)
+    throw new ResponseTooLargeError()
+  }
+
+  if (!res.body) return null
+
+  const reader = res.body.getReader()
+  const chunks = []
+  let receivedBytes = 0
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+
+      receivedBytes += value.byteLength
+      if (receivedBytes > MAX_RESPONSE_BYTES) {
+        await cancelBody(reader)
+        throw new ResponseTooLargeError()
+      }
+      chunks.push(value)
+    }
+  } catch (err) {
+    if (err instanceof ResponseTooLargeError) throw err
+    return null
+  } finally {
+    reader.releaseLock()
+  }
+
+  const body = new Uint8Array(receivedBytes)
+  let offset = 0
+  for (const chunk of chunks) {
+    body.set(chunk, offset)
+    offset += chunk.byteLength
+  }
+
+  try {
+    return JSON.parse(new TextDecoder().decode(body))
+  } catch {
+    return null
+  }
+}
+
 function textResult(payload, isError = false) {
+  const text = typeof payload === 'string' ? payload : JSON.stringify(payload)
+  if (Buffer.byteLength(text, 'utf8') > MAX_RESULT_BYTES) {
+    return {
+      content: [{ type: 'text', text: `SocialNexis result exceeded the ${MAX_RESULT_BYTES}-byte limit` }],
+      isError: true,
+    }
+  }
+
   return {
-    content: [{ type: 'text', text: typeof payload === 'string' ? payload : JSON.stringify(payload) }],
+    content: [{ type: 'text', text }],
     ...(isError ? { isError: true } : {}),
   }
 }
@@ -92,7 +163,7 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
       body: JSON.stringify(tool.buildPayload(req.params.arguments ?? {})),
       signal: AbortSignal.timeout(90_000),
     })
-    const json = await res.json().catch(() => null)
+    const json = await readJsonResponse(res)
     if (!res.ok) {
       const message = json?.error?.message ?? `Request failed (${res.status})`
       const cta = json?.cta ? ` ${json.cta.message} ${json.cta.url}` : ''
