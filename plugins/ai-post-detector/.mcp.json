@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "socialnexis": {
+      "type": "http",
+      "url": "https://api.socialnexis.com/mcp"
+    }
+  }
+}
